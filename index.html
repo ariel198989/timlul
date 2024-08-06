@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המתמלל של אריאל</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>המתמלל של אריאל</h1>
+        
+        <div class="input-group">
+            <label for="apiKey">Groq API Key:</label>
+            <input type="text" id="apiKey" placeholder="הכנס את מפתח ה-API שלך כאן">
+        </div>
+
+        <div class="input-group">
+            <label for="audioFile">העלאת קובץ אודיו:</label>
+            <input type="file" id="audioFile" accept=".wav,.mp3,.ogg,.m4a">
+        </div>
+
+        <div class="input-group">
+            <button id="recordButton">התחל הקלטה</button>
+            <button id="stopButton" class="hidden">עצור הקלטה</button>
+        </div>
+
+        <button id="transcribeButton">תמלל</button>
+
+        <div id="processingIndicator" class="hidden">מתמלל... אנא המתן</div>
+
+        <div id="transcription" class="hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
